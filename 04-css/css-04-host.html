@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../_css/w3.css">
+    <link rel="stylesheet" href="../_css/web-course.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04 Style Hosted</title>
+</head>
+<body>
+    <style>
+        :root {
+            /* --primary-color:orange; */
+            --primary-background: #ccc;
+            /* --primary-size: 30px; */
+        }
+       
+           
+    </style>
+    <script>  
+        const template = document.createElement('template');
+        template.innerHTML = `
+        <style>
+          .card {
+            background: #ccc;
+            width:50%;
+            padding:30px;
+            border: 2px solid orange;
+            margin:20px;
+            border-radius: 40px;
+            letter-spacing:2px;
+            }
+          /* the style will be applied from inside to the custom-dialog element */
+          /* host is like an if statement for other styles
+          :host(.important) #backdrop {opacity:1;}
+          i.e. if host has important class in it then set backdrop to opacity:1
+          */
+            
+          :host {
+            color:green;
+            display: block; /*important*/
+            border: 4px solid green;
+            background: aqua;
+            width:100%;
+         
+          } 
+          :host(.important) {
+           color:red;
+           display: block; /*important*/
+           padding:50px;
+           border: 2px dotted red;
+           background:yellow;
+          }
+          :host(.important) #hosted{
+              color:font-size:3rem;
+          }
+          :host(#showHost) {
+           color:purple;
+           display: block; /*important*/
+           padding:50px;
+           border: 2px dashed purple;
+           background: yellow;
+          }
+          :host([cool='yes']) {
+           color:black;
+           display: block; /*important*/
+           padding:50px;
+           border: 8px dashed red;
+           background:red ;
+          }
+          :host([cool]) {
+           color:black;
+           display: block; /*important*/
+           padding: 50px;
+           border: 8px dashed green;;
+           background: #ccc ;
+          }
+        </style>
+        <div class="card">
+          <slot>Some default</slot>
+          <br>
+          <div id="hosted">Hosted CSS</div>
+          <div >REMEMBER! Light DOM will always override Shadow CSS.</div>
+        </div>
+        `;
+
+        class BusinessCard extends HTMLElement {
+        constructor() {
+            super();
+            this.attachShadow({ mode: 'open' });
+            this.shadowRoot.appendChild(template.content.cloneNode(true));
+          }
+        }
+        customElements.define('my-card', BusinessCard);
+    </script>
+      <main>
+        <div class="wrapper">
+            <div class="explanation">
+                <h1>css-04-host</h1>
+                <h2>Use the :host() or :host(&lt;css selector&gt;) selector</h2>
+                <p>We can style the host using :host() which is the same as styling my-component on page.</p>
+                <p>We can also add further selctors with :host(#showHost) or :host(.important) for example.</p>
+                <p>By placing a selctor on the custom tag on the page, we can further style the compone within the component using this selector feature.</p>
+    
+            </div> 
+            <div class="spacer"></div>
+            <div id="output">
+                <!-- OUTPUT OF CUSTOM ELEMENT -->
+                <my-card  id="showHost">Slotted text</my-card>
+                <my-card cool="yes">COOL</my-card>
+            </div>
+            <div class="spacer"></div>
+            <div class="exercise">
+               <h3>EXERCISE:
+                 <p>Add/Remove an id="showHost" to my-card</p>
+                 <p>Remove the id and add class="important"</p>
+                 <p>Change cool='no'.</p>
+                 <p>Change to cool only.</p>
+                 <p>Notice how even if we have cool='yes' if we have just cool the:host[cool] takes precedence as it is lower in the style rules. Thus it sees </p>
+                
+               </h3>
+            </div>
+        </div>
+    </main> 
+   
+
+
+    <footer>
+      <div class=" w3-container w3-blue w3-center footer">
+        <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
+      </div>
+    </footer>
+
+</body>
+
+</html>

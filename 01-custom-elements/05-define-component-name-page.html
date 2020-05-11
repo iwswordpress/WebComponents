@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../_css/w3.css">
+    <link rel="stylesheet" href="../_css/web-course.css">
+    <title>04 Name Custom Element tag on page</title>
+</head>
+
+<body>
+    <style>
+        my-component {
+            color: red;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
+    </style>
+    <script src="05.js"></script>
+    <!-- We can let user define the component name -->
+    <script>
+        customElements.define('user-selected-name', WebComponentClass); // no definition in WebComponentClass      
+    </script>
+  
+    <main>
+        <div class="wrapper">
+            <div class="explanation">
+                <h1>05-define-cuomponent-name-page</h1>
+                <p>We can omit the customElements.define from the JS code and let the user name the component as they wish.</p>
+            </div>
+            <div class="spacer"></div>
+            <div id="output">
+                <!-- OUTPUT OF CUSTOM ELEMENT -->
+                <user-selected-name></user-selected-name>
+
+            </div>
+            <div class="spacer"></div>
+            <div class="exercise"">
+               <h3>EXERCISE:</h3>
+            </div>
+        </div>
+    </main> 
+    <footer>
+        <div class=" w3-container w3-blue w3-center footer">
+                <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
+            </div>
+            </footer>
+
+</body>
+
+</html>

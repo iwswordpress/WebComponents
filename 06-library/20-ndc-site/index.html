@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+   <link href="site.css" rel="stylesheet">
+   <title>Document</title>
+</head>
+
+<body>
+   <nav>
+      <script src="../15-ndc-navbar/nav.js"></script>
+      <my-navbar></my-navbar>
+   </nav>
+
+    
+   
+   <main>
+      <button class="w3-button w3-blue" id="btnChange">CHANGE POST TO ID:45</button>
+      <show-post postid="38"/> 
+
+
+      <script>
+       
+         const btn = document.getElementById('btnChange');
+         btn.addEventListener('click', function () {
+            // <show-post /> is an HTML tag
+            document.querySelector('show-post').setAttribute('postid', 45)
+            document.querySelector('show-post').publicMethod('We can access the component via its methods');
+         })
+      </script>
+
+   </main>
+   <script type='module'>
+      import '../01-ndc-show-post/showPost.js';
+  </script>
+   <wp-indexeddb-load-local cat="1"></wp-indexeddb-load-local>
+
+ <script src="../10-ndc-indexeddb/wp-indexeddb-load-local.js" type="module"></script>
+
+</body>
+
+</html>
