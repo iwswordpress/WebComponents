@@ -13,10 +13,10 @@ export class ProfileCard extends HTMLElement {
 
     connectedCallback() {
         // Change a property and see it reflected as an attribute
-        this.lastName = 'Adamoon';
+        this.firsttName = 'Tony';
+        this.lastName = 'Adamson';
         this.render();
     }
-
 
 
     render() {
