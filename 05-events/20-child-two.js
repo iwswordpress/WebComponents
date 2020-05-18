@@ -25,7 +25,7 @@ class ChildTwo extends HTMLElement {
     });
     // true means deep clone
     this.shadowRoot.appendChild(template2.content.cloneNode(true));
-    this.postListElement = this.shadowRoot.querySelector('section');
+    //this.postListElement = this.shadowRoot.querySelector('section');
   }
 
   connectedCallback() {
