@@ -11,11 +11,11 @@
 <body>
     <script>
         // can define tag in class definition
-        // customElements.define('my-component', class extends HTMLElement {}
+        // customElements.define('my-component', class extends HTMLElement {})
         class MyComponent extends HTMLElement {
             // constructor() creates class
             // not yet part of the DOM and is just a regular tag
-            // <h1> gets styling from page level <style>
+            
             constructor() {
                 super(); // this is needed to inherit HTMLElement properties and is standard JavaScript
                 console.log('Component created…');
@@ -27,7 +27,7 @@
                 this.innerHTML = ` 
                     <h1 style="color:red;">This is my web component</h1>
                     <p>This component is able to display HTML blocks.</p>
-                `;
+                `; // does not work in constructor
                 // 'this' refers to the  my-component tag of MyComponent.
             }
         }

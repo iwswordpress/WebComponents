@@ -29,23 +29,21 @@
                 // Attach a shadow root.
                 const shadowRoot = this.attachShadow({
                     mode: 'open'
-                });
-                // open means accessible from outside, although closed can be accessed with advanced JS.
-               
+                }); // open means accessible from outside, although closed can be accessed with advanced JS.
                 // BACK TICKS for ES6 template literals
                 shadowRoot.innerHTML = ` 
-                <style>
-                    div {
-                        margin: 20px;
-                        border: 4px solid orange;
-                        padding:20px;
-                        border-radius: 10px;
-                        font-size: 1.5rem;
-                        width:300px;
-                    }
-                </style>
-                <div>This is the SHADOW DOM</div>
-                <slot></slot>
+                    <style>
+                        div {
+                            margin: 20px;
+                            border: 4px solid orange;
+                            padding:20px;
+                            border-radius: 10px;
+                            font-size: 1.5rem;
+                            width:300px;
+                        }
+                    </style>
+                    <div>This is the SHADOW DOM</div>
+                    <slot></slot>
                 `;
             }
             connectedCallback() { // this as an event when the component is attached to the DOM
