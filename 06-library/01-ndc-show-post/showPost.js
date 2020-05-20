@@ -4,7 +4,9 @@ import {
     SERVER,
     Utility
 } from '../00-ndc-global/global.js';
-
+import {
+    CARD
+} from '../00-ndc-global/shared-css.js';
 console.log("[SERVER from import] " + SERVER);
 
 class ShowPost extends HTMLElement {
@@ -17,16 +19,8 @@ class ShowPost extends HTMLElement {
         });
         this.shadowRoot.innerHTML = `
         <style>
-            .card {
-              border: 2px solid black;
-              border-radius: 10px;
-              padding:20px;
-              margin-bottom:20px;
-              background: var(--background-color-01, yellow);
-              font-size: var(--main-font-size, 20px);
-              font-family: var(--main-font, inherit);
-              color: var(--main-text-color, red);
-            }  
+            ${CARD}
+           
         </style>
         <!-- COMPONENT OUTPUT HERE -->
         <div id="info"></div>

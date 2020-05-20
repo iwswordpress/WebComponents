@@ -16,7 +16,7 @@
     <style>
         /* Custom CSS Variables */
         :root {
-            --primary-color: red;
+            --primary-color: green;
             --primary-size: 25px;
         }
            
@@ -27,8 +27,8 @@
         }
     </style>
     <div>Light dom div not affected by Shadow DOM CSS</div>
-    <script >  
-       
+    <script type="module">  
+        import {CSS} from './css-02.js';
 
         customElements.define('my-component', class extends HTMLElement {
             constructor() {
@@ -38,21 +38,12 @@
                 const shadowRoot = this.attachShadow({mode: 'open'});
                 shadowRoot.innerHTML = `
                 <style>
-                    div {
-                        border-radius: 10px;
-                        border: 5px solid orange;
-                        padding: 20px;
-                        color: var(--primary-color, goldenrod);
-                        text-transform: uppercase;
-                        font-size: var(--primary-size);
-                        width: 600px;
-                        margin-bottom:20px;
-                        font-family: inherit;
-                    }
+                    ${CSS}
                 </style>
-                <div >A styled DIV element</div>
+                <div class="import">A styled DIV element</div>
                 <slot>DEFAULT SLOT TEXT</slot>
                 `;
+               // linking a stylesheet can work but is not considered good practice
             }
         });
     </script>
