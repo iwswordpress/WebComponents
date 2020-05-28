@@ -47,6 +47,7 @@ class ShowPost extends HTMLElement {
     }
     disconnectedCallback() {
         // when component is removed from DOM
+        console.log("Component removed - disconnectedCallback() fired...")
     }
     _getPosts(postID) {
         var utililityGetUrl = Utility.getUrl();
