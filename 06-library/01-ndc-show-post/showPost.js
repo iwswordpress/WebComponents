@@ -79,7 +79,9 @@ class ShowPost extends HTMLElement {
     // we can also use getters and setters to do this (be wary of infinite loop)
     publicMethod(val) {
         // alert('[FN] Public Method in Web Component called...' + val);
-        // console.log('Public Method in Web Component called...[VALUE] ' + val + ' passed in');
+        console.log("+++++++++++++++++++++++++");
+        console.log('PUBLIC METHOD in Web Component called...[MESSAGE] => ' + val);
+        console.log("+++++++++++++++++++++++++");
         // this._getPosts(40);
         // this.setAttribute('postid', 1142); // triggers attributeCallback lifecycle event
     }
