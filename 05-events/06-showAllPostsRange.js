@@ -58,7 +58,9 @@ class ShowAllPostsRange extends HTMLElement {
         }
         this._getPosts();
     }
-    disconnectedCallback() {}
+    disconnectedCallback() {
+        console.log("disconnectedCallback() fired...");
+    }
     _getPosts() {
         let apiUrl = "06-data.json";
 

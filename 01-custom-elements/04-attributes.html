@@ -28,8 +28,7 @@
             connectedCallback() { // this as an event when the component is attached to the DOM
                 var myItem = document.getElementById("comp")
                 this.innerHTML = '<h1>This is my web component</h1>'; // this refers to the class component.
-                this.innerHTML += '<h1>System Attribute is now <span style="color:purple;">' + myItem.getAttribute(
-                    "system") + '</span></h1>';
+                this.innerHTML += '<h1>System Attribute is now <span style="color:purple;">' + myItem.getAttribute("system") + '</span></h1>';
                 console.log('Component now part of DOM…');
             }
         }

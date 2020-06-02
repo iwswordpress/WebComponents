@@ -40,6 +40,9 @@
                 return ['system'];
             }
             //these can be any names but first is attribute name, then original value, then new value
+            // initially the attribute is null so initial setting fires a change
+            // that is why we check oldVaue !== newValue although there are cases where this
+            // may not be required.
             attributeChangedCallback(attributeName, oldValue, newValue) {
                 console.log('The attribute SYSTEM has been changed from ' + oldValue + ' to ' + newValue);
                 if (attributeName === 'system' && oldValue !== newValue) {

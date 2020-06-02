@@ -76,6 +76,10 @@
         iconIcon.removeEventListener('mouseleave', this._hideIconText.bind(this));
       }
 
+      static get observedAttributes() {
+        return ['displaytext'];
+      }
+
       attributeChangedCallback(name, oldValue, newValue) {
         if (oldValue === newValue) {
           return;
@@ -84,11 +88,7 @@
           this._iconText = newValue;
         }
       }
-
-      static get observedAttributes() {
-        return ['displaytext'];
-      }
-
+  
       _showIconText() {
         this._iconContainer = document.createElement('div');
         this._iconContainer.textContent = this._iconText;
