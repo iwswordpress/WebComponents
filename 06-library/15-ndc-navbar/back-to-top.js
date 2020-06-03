@@ -7,34 +7,34 @@ customElements.define('back-to-top', class extends HTMLElement {
             mode: 'open'
         });
         shadowRoot.innerHTML = `
-            <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
-            <style>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand'>
+        <style>
 
-            body {
-                font-family: Raleway sans-serif;
-                font-size: 20px;
-            }
-            
-            #myBtn {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                right: 75px;
-                z-index: 99;
-                font-size: 20px;
-                border: none;
-                outline: none;
-                background-color: #2196f3;
-                color: white;
-                cursor: pointer;
-                padding: 15px 10px;
-                border-radius: 50%;
-            }    
-            #myBtn:hover {
-                background-color:orange;
-            }
-            </style>
-            <button  id="myBtn" title="Go to top">Top</button>
+        body {
+          font-family: Raleway sans-serif;
+          font-size: 20px;
+        }
+        
+        #myBtn {
+          display: none;
+          position: fixed;
+          bottom: 20px;
+          right: 75px;
+          z-index: 99;
+          font-size: 20px;
+          border: none;
+          outline: none;
+          background-color: #2196f3;
+          color: white;
+          cursor: pointer;
+          padding: 15px 10px;
+          border-radius: 50%;
+        }    
+        #myBtn:hover {
+          background-color:orange;
+        }
+        </style>
+        <button  id="myBtn" title="Go to top">Top</button>
         `;
     }
     connectedCallback() {

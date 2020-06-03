@@ -38,7 +38,8 @@ class ShowAllPostsCategory extends HTMLElement {
   }
 
   _getPosts() {
-    let apiUrl = "../_data/cat24.json";
+    let apiUrl = 'https://49plus.co.uk/udemy/wp-json/wp/v2/posts?categories=4';
+    console.log(apiUrl);
 
     fetch(apiUrl)
       .then(res => res.json())

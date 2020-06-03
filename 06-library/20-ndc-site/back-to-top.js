@@ -7,7 +7,7 @@ customElements.define('back-to-top', class extends HTMLElement {
             mode: 'open'
         });
         shadowRoot.innerHTML = `
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Quicksand'>
         <style>
 
         body {

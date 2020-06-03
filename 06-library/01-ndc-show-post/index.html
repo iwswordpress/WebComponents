@@ -17,24 +17,23 @@
                 <h1>01-ndc-show-post</h1>
                 <h2>This returns one post based on a JSON file for one post. For DEMO purposes at this stage.</h2>
                 <p>We are using CSS custom properties defined in ../_css/library.css</p>
-                <p>In DEV > ELEMENTS we can change postid  to 40 or 45 to get a new post.</p>
+                <p>In DEV > ELEMENTS we can change postid  to 110 or 106 to get a new post.</p>
     
             </div> 
             <div class="spacer"></div>
             <div id="output">
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
-                <button class="w3-button w3-blue" id="btnChange">CHANGE POST TO ID:45</button>
+                <button class="w3-button w3-blue" id="btnChange">CHANGE POST TO ID:110</button>
                 <!-- WEB COMPONENT -->
-                <show-post postid="38"/> 
-                <!-- most broswers allow self-closing custom tags if there is no slot content but check!-->
+                <show-post postid="109"></show-post>
                 <!-- WEB COMPONENT -->
                 <script>
                 
                     const btn = document.getElementById('btnChange');
                     btn.addEventListener('click', function() {
                         // <show-post /> is an HTML tag
-                        document.querySelector('show-post').setAttribute('postid', 45)
-                        document.querySelector('show-post').publicMethod('message argument in public function');
+                        document.querySelector('show-post').setAttribute('postid', 110)
+                        document.querySelector('show-post').publicMethod('We can access the component via its methods');
                     })
                    
                 </script>
@@ -44,7 +43,7 @@
             <div class="spacer"></div>
             <div class="exercise"">
                <h3>EXERCISE:
-                 <p>Change postid to 40 or 45 in DEV > ELEMENTS as well as clicking button.</p>
+                 <p>Change postid to 110 or 106 in DEV > ELEMENTS as well as clicking button.</p>
                </h3>
             </div>
         </div>

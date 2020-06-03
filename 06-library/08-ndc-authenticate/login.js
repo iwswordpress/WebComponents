@@ -11,8 +11,8 @@ template.innerHTML = `
     <link href="../_css/webcomponent-form.css" rel="stylesheet">
     <div class="container">
         <h1>LOGIN FORM</h1>
-        <p>Uses a WordPress REST API to check login details and returns a JSON WEB TOKEN</p>
-        <p>admin@49plus.co.uk - cwwp</p>
+        <p>Uses a WordPress REST API to check login details and returns a success/fail message with UserId and JSON WEB TOKEN.</p>
+        <p>Use email: <b>demo2@49plus.co.uk</b> and password: <b>demo2</b></p>
         <p><span class="req">*</span> denotes required</p>
         <!-- ********************************************  FORM ***********************************  -->
         <form id="myForm">
@@ -82,7 +82,7 @@ class WPLogin extends HTMLElement {
                         // use FormData object as it is going to PHP so don't need to add content-type headers
                     })
                     .then(function (response) {
-                        return response.text();
+                        return response.json();
                     })
                     .then(function (data) {
                         console.log(data);
@@ -94,8 +94,8 @@ class WPLogin extends HTMLElement {
                             composed: true // this is needed to escape the Shadow DOM encapsulation and be heard by the Light DOM
                         }));
                         // display in component
-                        self.showResult(data);
-
+                        self.showResult(data.jwt);
+                        console.log("JWT = " + data.jwt)
                         console.log("CUSTOM EVENT emitted");
                         //window.location.href = "https://49 plus.co.uk/abob/";
                     })
@@ -125,7 +125,7 @@ class WPLogin extends HTMLElement {
         this.passwordField.addEventListener("keyup", this.passwordHandlerListener)
     };
     showResult(data) {
-        this.formMessage.innerHTML = `${data}`;
+        this.formMessage.innerHTML = `JWT: ${data}`;
     }
     clearFields() {
         this.emailField.value = "";

@@ -4,9 +4,7 @@ import {
     SERVER,
     Utility
 } from '../00-ndc-global/global.js';
-import {
-    CARD
-} from '../00-ndc-global/shared-css.js';
+
 console.log("[SERVER from import] " + SERVER);
 
 class ShowPost extends HTMLElement {
@@ -19,8 +17,16 @@ class ShowPost extends HTMLElement {
         });
         this.shadowRoot.innerHTML = `
         <style>
-            ${CARD}
-           
+            .card {
+              border: 2px solid black;
+              border-radius: 10px;
+              padding:20px;
+              margin-bottom:20px;
+              background: var(--background-color-01, yellow);
+              font-size: var(--main-font-size, 20px);
+              font-family: var(--main-font, inherit);
+              color: var(--main-text-color, red);
+            }  
         </style>
         <!-- COMPONENT OUTPUT HERE -->
         <div id="info"></div>
@@ -47,16 +53,16 @@ class ShowPost extends HTMLElement {
     }
     disconnectedCallback() {
         // when component is removed from DOM
-        console.log("Component removed - disconnectedCallback() fired...")
+        console.log("Component removed - disconnectedCallback()...")
     }
     _getPosts(postID) {
         var utililityGetUrl = Utility.getUrl();
         console.log("url is " + utililityGetUrl);
         console.log(postID);
         console.log("[SERVER] " + SERVER);
-        // let url = SERVER + 'wpb/wp-json/wp/v2/posts/' + postID;
+        let url = SERVER + 'udemy/wp-json/wp/v2/posts/' + postID;
         // let url = utililityGetUrl + 'wpb/wp-json/wp/v2/posts/' + postID;
-        let url = '../_data/showPost' + postID + '.json';
+        //let url = '../_data/showPost' + postID + '.json';
         console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -79,9 +85,7 @@ class ShowPost extends HTMLElement {
     // we can also use getters and setters to do this (be wary of infinite loop)
     publicMethod(val) {
         // alert('[FN] Public Method in Web Component called...' + val);
-        console.log("+++++++++++++++++++++++++");
-        console.log('PUBLIC METHOD in Web Component called...[MESSAGE] => ' + val);
-        console.log("+++++++++++++++++++++++++");
+        // console.log('Public Method in Web Component called...[VALUE] ' + val + ' passed in');
         // this._getPosts(40);
         // this.setAttribute('postid', 1142); // triggers attributeCallback lifecycle event
     }

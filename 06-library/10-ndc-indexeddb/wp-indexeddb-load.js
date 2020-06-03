@@ -33,8 +33,8 @@ class WPIndexedDBLoad extends HTMLElement {
 			var db = 'cat' + newValue;
 			var table = 'wpcat' + newValue;
 			console.log("[SERVER] " + SERVER);
-			let url = SERVER + 'wpb/wp-json/wp/v2/posts?categories=' + newValue;
-			console.log("[URL] " + url);
+			let url = 'https://wpjs.co.uk/wpb/wp-json/wp/v2/posts?categories=' + newValue;
+			console.log("[INDEXEDDB URL] " + url);
 			this.loadData(db, table, 2, url);
 		}
 	}

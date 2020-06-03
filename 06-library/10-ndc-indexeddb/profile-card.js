@@ -27,7 +27,6 @@ class ProfileCard extends HTMLElement {
                <div class="content"><strong>${this.postid} ${this.posttitle}</strong></div>
                <div>Authored by <em>${this.author}</em><br></div>
                <div>${this.content}</div>
-               <div><a href="#">MORE...</a> </div>
              
             </div>  
         `;

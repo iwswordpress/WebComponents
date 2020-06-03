@@ -64,13 +64,6 @@ class LazyLoadComponent extends HTMLElement {
                 if (entry.isIntersecting) {
                     console.log("loading...");
 
-                    //     this.shadowRoot.getElementById('component').innerHTML = `
-                    //     <div style="background:white;padding:20px;">
-                    //          <show-lazy-single-post></show-lazy-single-post>
-
-                    //     </div>
-                    //    `
-
                     let apiUrl = 'https://wpjs.co.uk/wpb/wp-json/wp/v2/posts/' + this.ID;
                     console.log("Making AJAX to: " + apiUrl);
 

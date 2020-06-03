@@ -60,16 +60,16 @@ class ShowAllPostsUrl extends HTMLElement {
                 console.log(data);
                 let i;
                 let output = "<br>";
-                output += "<h2>SHOW ALL POSTS FOR A URL</h2>";
+                output += `<h2>SHOW ALL POSTS FOR A URL</h2><h2>${url}</h2>`;
                 const info = this.shadowRoot.querySelector("#info");
                 info.innerHTML = "";
                 //console.log(data.length);
                 for (i = 0; i < data.length; i++) {
                     //console.log(i);
                     output += '<div class="card">';
-                    output += "PostID: " + data[i].id + "</b><br>";
-                    output += "Title: " + data[i].title.rendered + "<br>";
-                    output += "Author: " + data[i].authorName.toUpperCase() + "<br>";
+                    output += "PostID: <b>" + data[i].id + "</b><br>";
+                    output += "Title: <b>" + data[i].title.rendered + "</b><br>";
+                    //output += "Author: " + data[i].author + "<br>";
                     output += "<p>" + data[i].content.rendered + "</p>";
                     output += "</div>";
                 }

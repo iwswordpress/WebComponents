@@ -7,15 +7,15 @@ class LazyLoad extends HTMLElement {
         });
         this.shadowRoot.innerHTML = `
         <style>
-        .image {
-            display: block;
-            margin-top: 100px;
-            margin-bottom: 100px;
-            max-width: 800px;
-            height: 600px;
-            border: 1px solid black;
-            z-index: 10;
-        }
+            .image {
+                display: block;
+                margin-top: 100px;
+                margin-bottom: 100px;
+                max-width: 800px;
+                height: 600px;
+                border: 1px solid black;
+                z-index: 10;
+            }
         </style>
     
         <img id="image1"  alt="lazy load image needs to cross threshold 350px from bottom with at least 20% of its height" class="image">
@@ -55,6 +55,7 @@ class LazyLoad extends HTMLElement {
                     let imageUrl = this.imgURL;
                     if (imageUrl) {
                         entry.target.src = imageUrl;
+                        console.log("loading IMAGE..." + imageUrl);
                         observer.unobserve(entry.target);
                     }
                 }
