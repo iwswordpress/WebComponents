@@ -27,6 +27,10 @@
    font-family: 'Quicksand', sans-serif;
 }
 
+html {
+   margin-left: calc(100vw - 100%);
+}
+
 body {
    color: black;
    font-size: 18px;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>05 Style Hosted Context</title>
 </head>
-
 <body>
     <style>
         :root {
@@ -32,11 +30,9 @@
                 font-weight: bold;
                 font-size: 2.0rem;
             }
-     
           </style> 
           <slot></slot>    
         `;
-
         class BusinessCard extends HTMLElement {
             constructor() {
                 super();
@@ -52,7 +48,8 @@
         <div class="wrapper">
             <div class="explanation">
                 <h1>css-05-host-context</h1>
-                <p>We can change the styling of the component based on the context of the host, which in this case is div#showContext</p>
+                <p>We can change the styling of the component based on the context of the host, which in this case is
+                    div#showContext</p>
                 <p></p>
             </div>
             <div class="spacer"></div>
@@ -60,30 +57,27 @@
                 <div id="showContext">
                     <!-- based on the above div#showContext, the component will be styled accordingly -->
                     <my-card>:host(context)</my-card>
-                </div>   
+                </div>
                 <div>
                     <my-card id="showHost">#showHost</my-card>
-                </div>  
+                </div>
             </div>
-            
             <div class="spacer"></div>
             <div class="exercise">
-            <img src="../_images/css-diagram.png" alt="css diagram">
-               <h2>Add id="showHost" to page level component.</h2>
-               <p>The host(#showHost) now takes precedence <em>only</em> because it is listed after host-context() in style.</p>
-               <p>Move the host(#showHost) above :host-context a (or remove it) and you will see that the color goes back to pink.</p>
-               <p>Thus host styling is just like CSS styling using cascading rules.</p>
+                <img src="../_images/css-diagram.png" alt="css diagram">
+                <h2>Add id="showHost" to page level component.</h2>
+                <p>The host(#showHost) now takes precedence <em>only</em> because it is listed after host-context() in
+                    style.</p>
+                <p>Move the host(#showHost) above :host-context a (or remove it) and you will see that the color goes
+                    back to pink.</p>
+                <p>Thus host styling is just like CSS styling using cascading rules.</p>
             </div>
         </div>
-    
     </main>
-    
-  <footer>
-
-    <div class="w3-container w3-blue w3-center footer">
-      <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
-    </div>
-  </footer>
-
+    <footer>
+        <div class="w3-container w3-blue w3-center footer">
+            <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
+        </div>
+    </footer>
 </body>
 </html>
