@@ -20,15 +20,15 @@
    --background-color-05: #f7d198;
 }
 
+html {
+   margin-left: calc(100vw - 100%);
+}
+
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
    font-family: 'Quicksand', sans-serif;
-}
-
-html {
-   margin-left: calc(100vw - 100%);
 }
 
 body {

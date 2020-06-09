@@ -7,17 +7,19 @@ class LazyLoad extends HTMLElement {
         });
         this.shadowRoot.innerHTML = `
         <style>
-            .image {
-                display: block;
-                margin-top: 100px;
-                margin-bottom: 100px;
-                max-width: 800px;
-                height: 600px;
-                border: 1px solid black;
-                z-index: 10;
-            }
+        .image {
+            display: block;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            max-width: 800px;
+            height: 600px;
+            border: 1px solid black;
+            z-index: 10;
+        }
         </style>
+    
         <img id="image1"  alt="lazy load image needs to cross threshold 350px from bottom with at least 20% of its height" class="image">
+       
     `;
     }
     static get observedAttributes() {
@@ -32,6 +34,7 @@ class LazyLoad extends HTMLElement {
             console.log(name, oldValue, newValue);
             this.imgURL = newValue;
         }
+
     }
     connectedCallback() {
         let options = {
@@ -45,6 +48,7 @@ class LazyLoad extends HTMLElement {
         }
         const lazyImage = this.shadowRoot.querySelector('#image1');
         let callback = (entries, observer) => {
+
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.target.className === 'image') {
                     //let imageUrl = lazyImage.getAttribute('data-img');
@@ -56,10 +60,15 @@ class LazyLoad extends HTMLElement {
                     }
                 }
             });
+
         }
         let observer = new IntersectionObserver(callback, options);
         observer.observe(lazyImage);
     }
-    disconnectedCallback() {}
+
+    disconnectedCallback() {
+
+    }
+
 }
 customElements.define('wp-lazy-load', LazyLoad);
