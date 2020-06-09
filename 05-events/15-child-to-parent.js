@@ -26,7 +26,7 @@ class ChildOne extends HTMLElement {
   connectedCallback() {
     const btn = this.shadowRoot.getElementById('btn');
     btn.addEventListener('click', (e) => {
-      console.log("[CHILD ONE] +++++ CLICK START +++++");
+      console.log("[CHILD ONE JS] +++++ CLICK START +++++");
       console.log(e);
       const eventData = 'DATA SENT IN CUSTOM EVENT ' + Math.floor(Math.random() * 1000);
       // ++++++++++ CUSTOM EVENTS ++++++++++ 
@@ -36,7 +36,7 @@ class ChildOne extends HTMLElement {
         composed: true // this is needed to escape the Shadow DOM encapsulation and be heard by the Light DOM
       }));
       // ++++++++++ CUSTOM EVENTS ++++++++++ 
-      console.log("[CHILD ONE] +++++ CLICK END +++++ ");
+      console.log("[CHILD ONE JS] +++++ CLICK END +++++ ");
     });
   };
 }

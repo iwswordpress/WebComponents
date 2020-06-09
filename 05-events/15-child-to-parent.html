@@ -71,7 +71,7 @@
   <script>
     const childOne = document.querySelector('child-one')
     childOne.addEventListener('childOneClick', e => {
-      console.log("<child-one> Event HEARD on page in childOne");
+      console.log("<child-one> HTML PAGE: Event heard on page in childOne");
       console.log(e);
       const pOutput = document.getElementById('pOutput');
       pOutput.innerHTML = '<b>' + e.detail + '</b>';
