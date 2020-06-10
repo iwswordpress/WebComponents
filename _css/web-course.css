@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-
-
 body {
     font-family: 'Quicksand', sans-serif;
     color: black;
@@ -21,7 +19,6 @@ a:visited {
 a:hover {
     color: orange;
     text-decoration: underline;
-
 }
 
 p {
@@ -81,7 +78,6 @@ li {
 
 .exercise {
     border: 2px solid orange;
-
     padding: 10px;
     margin: 10px;
 }

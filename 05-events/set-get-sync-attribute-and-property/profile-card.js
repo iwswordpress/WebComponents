@@ -20,7 +20,7 @@ export class ProfileCard extends HTMLElement {
         `;
     }
     attributeChangedCallback(name, oldValue, newValue) {
-        // Reentrancy!!!
+        // Google warns of RE-ENTRANCY!!!
         // https://developers.google.com/web/fundamentals/web-components/best-practices#avoid-reentrancy
         // if we were to set property firstName to new attribute value it would fire off SET which in
         // turn fires of atributeChangedCallback - an endless loop that gives an out of memory error.
