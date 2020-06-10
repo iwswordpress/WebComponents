@@ -8,27 +8,23 @@ class LazyLoadComponent extends HTMLElement {
         });
         this.shadowRoot.innerHTML = `
         <style>
-        .web-component {
-            display: block;
-            max-width: 800px;
-            height: 700px;
-            padding:20x;
-            border: 1px solid black;
-            background:#ccc;
-           
-            overflow-y: hidden;
-            overflow-x:hidden;
-        }
+            .web-component {
+                display: block;
+                max-width: 800px;
+                height: 700px;
+                padding:20x;
+                border: 1px solid black;
+                background:#ccc;
+                overflow-y: hidden;
+                overflow-x: hidden;
+            }
         #info {
-            padding:20px;
-        }
+                padding:20px;
+            }
         </style>
-        
-    
         <div id="component" class="web-component">
              <div id="info" ></div>
         </div>
-      
     `;
     }
     static get observedAttributes() {
@@ -43,9 +39,7 @@ class LazyLoadComponent extends HTMLElement {
         if (name === "postid") {
             console.log(name, oldValue, newValue);
             this.ID = newValue;
-
         }
-
     }
     connectedCallback() {
         let options = {
@@ -55,23 +49,19 @@ class LazyLoadComponent extends HTMLElement {
             root: null,
             // 400px above the fold for demo purpses
             rootMargin: "0px 0px -400px 0px",
-            threshold: 0.0
+            threshold: 0.0 // what percentage of object must be in view to activate it.
         }
         const lazyComponent = this.shadowRoot.querySelector('#component');
         let callback = (entries, observer) => {
-
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     console.log("loading...");
-
                     let apiUrl = 'https://wpjs.co.uk/wpb/wp-json/wp/v2/posts/' + this.ID;
                     console.log("Making AJAX to: " + apiUrl);
-
                     fetch(apiUrl)
                         .then(res => res.json())
                         .then(data => {
                             console.log(data);
-
                             let i;
                             let output = '<br>';
                             const info = this.shadowRoot.querySelector('#info');
@@ -82,23 +72,15 @@ class LazyLoadComponent extends HTMLElement {
                             output += '<b>' + data.authorName.toUpperCase() + '</b><br>';
                             output += '<p>' + data.content.rendered + '</p>';
                             output += '</div>';
-
                             info.innerHTML += output;
                         });
-
                     observer.unobserve(entry.target);
-
                 }
             });
-
         }
         let observer = new IntersectionObserver(callback, options);
         observer.observe(lazyComponent);
     }
-
-    disconnectedCallback() {
-
-    }
-
+    disconnectedCallback() {}
 }
 customElements.define('wp-lazy-load-component', LazyLoadComponent);

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../_css/w3.css">
+   <link rel="stylesheet" href="../_css/web-course.css">
+   <title>06 Extend existing HTML Element</title>
+</head>
+
+<body>
+
+   <h1>Extend an existing element:</h1>
+   <main>
+      <div class="wrapper">
+         <div class="explanation">
+            <h1>Extend an existing element:</h1>
+            <p><a is="wp-confirm-link" href="https://developers.google.com/web/fundamentals/web-components/customelements#extendhtml"
+                  target="_blank">https://developers.google.com/web/fundamentals/web-components/customelements#extendhtml</a>
+            </p>
+         </div>
+      </div>
+   </main>
+   <footer>
+      <div class="w3-container w3-blue w3-center footer">
+         <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
+      </div>
+   </footer>
+   <script>
+      class ConfirmLink extends HTMLAnchorElement {
+         connectedCallback() {
+            this.addEventListener('click', event => {
+               if (!confirm('Do you really want to leave?')) {
+                  event.preventDefault();
+               }
+            });
+         }
+      }
+
+      customElements.define('wp-confirm-link', ConfirmLink, {
+         extends: 'a'
+      });
+   </script>
+</body>
+
+</html>
