@@ -2,32 +2,54 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-   <link href="site.css" rel="stylesheet">
-   <title>CAT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_css/library.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Show All Posts in a Category</title>
+
+
+  <style>
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+  </style>
 </head>
 
 <body>
-   <nav>
-      <script src="../15-ndc-navbar/nav.js"></script>
-      <my-navbar></my-navbar>
-   </nav>
+  <nav>
+    <script src="../15-ndc-navbar/nav.js"></script>
+    <my-navbar></my-navbar>
+  </nav>
+  <div class="wrapper">
+    <div class="content">
 
-   <main>
-      <p class="code">&lt;show-all-posts-category cat="6"&gt;&lt;/show-all-posts-category&gt;</p>
-      <p class="code">&lt;script src="showAllPostsCategory.js"&gt;&lt;/script&gt;</p>
+      <h2>Raw POSTS data loaded.</h2>
+      <br>
+      <p>
+        <strong>Explanantion: </strong>We load all posts in a category.
+      </p>
+
+
       <!-- WEB COMPONENT -->
-
-      <show-all-posts-category cat="6"></show-all-posts-category>
+      <!-- cat 4 or 6 for 49plus - 6,7,24,25. 26 for wpjs -->
+      <show-all-posts-category cat="25"></show-all-posts-category>
       <script src="../03-ndc-show-all-posts/showAllPostsCategory.js" type="module"></script>
       <!-- WEB COMPONENT -->
 
-   </main>
-   <script src="../15-ndc-navbar/back-to-top.js"></script>
-   <back-to-top></back-to-top>
 
+
+
+    </div>
+    <br><br>
+  </div>
+
+  <back-to-top></back-to-top>
+  <script src="../15-ndc-navbar/back-to-top.js"></script>
 </body>
 
 </html>

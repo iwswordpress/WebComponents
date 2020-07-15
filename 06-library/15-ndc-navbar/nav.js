@@ -10,72 +10,72 @@ customElements.define(
       });
       shadowRoot.innerHTML = `
             <style>
-            body {
-              margin: 0;
-              font-family: var(--main-font, sans-serif);
-              font-size: var(--main-font-size, 22px);
-            }
-            
-            .topnav {
-              overflow: hidden;
-              background-color: #2196f3;
-              max-width:1200px;
-              margin: 0 auto;
-            }
-            
-            .topnav a {
-              float: left;
-              display: block;
-              color: #fff;
-              text-align: center;
-              padding: 14px 16px;
-              text-decoration: none;
-              font-family: var(--main-font, sans-serif);
-              font-size: var(--main-font-size, 22px);
-              font-weight:bold;
-            }
-            
-            .topnav a:hover {
-              background-color: orange;
-              color: #fff;
-            }
-            
-            .topnav a.active {
-              background-color: orange;
-              color: white;
-            }
-            
-            .topnav .icon {
-              display: none;
-            }
-            
-            @media screen and (max-width: 600px) {
-              .topnav a:not(:first-child) {display: none;}
-              .topnav a.icon {
-                float: right;
-                display: block;
-                z-index:100;
+              body {
+                margin: 0;
+                font-family: var(--main-font, sans-serif);
+                font-size: var(--main-font-size, 22px);
               }
-            }
-            
-            @media screen and (max-width: 600px) {
-              .topnav.responsive {position: relative;}
-              .topnav.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-                z-index:100;
-              }
-              .topnav.responsive a {
-                float: none;
-                display: block;
-                text-align: left;
-              }
-              .topnav a.active {
+              
+              .topnav {
+                overflow: hidden;
                 background-color: #2196f3;
+                max-width:1200px;
+                margin: 0 auto;
+              }
+              
+              .topnav a {
+                float: left;
+                display: block;
+                color: #fff;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-family: var(--main-font, sans-serif);
+                font-size: var(--main-font-size, 22px);
+                font-weight:bold;
+              }
+              
+              .topnav a:hover {
+                background-color: orange;
+                color: #fff;
+              }
+              
+              .topnav a.active {
+                background-color: orange;
                 color: white;
               }
-            }
+              
+              .topnav .icon {
+                display: none;
+              }
+              
+              @media screen and (max-width: 600px) {
+                .topnav a:not(:first-child) {display: none;}
+                .topnav a.icon {
+                  float: right;
+                  display: block;
+                  z-index:100;
+                }
+              }
+              
+              @media screen and (max-width: 600px) {
+                .topnav.responsive {position: relative;}
+                .topnav.responsive .icon {
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  z-index:100;
+                }
+                .topnav.responsive a {
+                  float: none;
+                  display: block;
+                  text-align: left;
+                }
+                .topnav a.active {
+                  background-color: #2196f3;
+                  color: white;
+                }
+              }
         </style>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <div class="topnav" id="myTopnav">
