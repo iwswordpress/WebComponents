@@ -28,7 +28,8 @@
             connectedCallback() { // this as an event when the component is attached to the DOM
                 var myItem = document.getElementById("comp")
                 this.innerHTML = '<h1>This is my web component</h1>'; // this refers to the class component.
-                this.innerHTML += '<h1>System Attribute is now <span style="color:purple;">' + myItem.getAttribute("system") + '</span></h1>';
+                this.innerHTML += '<h1>System Attribute is now <span style="color:purple;">' 
+                    + myItem.getAttribute("system") + '</span></h1>';
                 console.log('Component now part of DOM…');
             }
         }
@@ -42,11 +43,13 @@
                 <h1>04-attributes</h1>
                 <p>We can define any attribute name we want.</p>
                 <p>We can get/set Attribute from within the component.</p>
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute" target=_blank">https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute</a></p>
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute" target=_blank">https://developer.mozilla.org/en-US/docs/Web/API/Element/settAttribute</a></p>
             </div>
             <div class="spacer"></div>
             <div id="output">
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
-                <my-component system='JavaScript' id="comp"></my-component>
+                <my-component system='JS' id="comp"></my-component>
 
             </div>
             <div class="spacer"></div>
