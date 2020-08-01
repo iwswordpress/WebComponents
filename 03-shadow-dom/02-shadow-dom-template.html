@@ -12,7 +12,7 @@
 </head>
 
 <body>
-   <!-- NOTE: In future sections the template HTML will be encapsulated in the Web Component and not be in the Light DOM or page as it were. -->
+  
     <template>
       <h1>This template will not render...</h1>
       <script>
@@ -21,7 +21,9 @@
     </template>
 
   <script >
-      
+        
+    // NOTE: In future sections the template HTML will be encapsulated in the Web Component 
+    // and not be in the Light DOM or page as it were. 
     const template = document.createElement('template');
     template.innerHTML = `
         <h1>Using Template in Shadow DOM</h1>
@@ -53,8 +55,6 @@
             <div id="output">
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
                 <my-component></my-component>
-
-
             </div>
             <div class="spacer"></div>
             <div class="exercise"">

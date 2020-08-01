@@ -19,7 +19,7 @@
             font-weight: bold;
         }
     </style>
-    <div id="light">Light dom div not affected by Shadow DOM CSS</div>
+    
     <script>
         // Alternative way to define component
         customElements.define('my-component', class extends HTMLElement {
@@ -27,10 +27,13 @@
                 super(); // always call super() first in the constructor.
 
                 // Attach a shadow root.
-                const shadowRoot = this.attachShadow({
-                    mode: 'open'
-                }); // open means accessible from outside, although closed can be accessed with advanced JS.
+                const shadowRoot = this.attachShadow({mode: 'open'}); 
+                // open means accessible from outside, although closed can be accessed with advanced JS.
+                
                 // BACK TICKS for ES6 template literals
+                // We use this approach for content and style rather than a template tag outside
+                // of the  component as we can then ship one JS file for our users rather than
+                // a JS file and some HTML they need to include in their page
                 shadowRoot.innerHTML = ` 
                     <style>
                         div {
@@ -70,12 +73,13 @@
             <div class="spacer"></div>
             <div id="output">
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
-                <my-component>SLOT TEXT HERE</my-component>
-
+                <my-component>SLOT TEXT HERE</my-component> 
             </div>
+            <div>Light dom div not affected by Shadow DOM CSS</div>
             <div class="spacer"></div>
             <div class="exercise"">
                <h3>EXERCISE:</h3>
+            
             </div>
         </div>
     </main> 
