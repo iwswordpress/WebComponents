@@ -54,17 +54,16 @@
             </style>
             <div class="card">
                 <slot></slot>
-                <slot name="first"></slot><br>
-              
+                <slot name="first"></slot>
             </div>
         `;
         const slots = this.shadowRoot.querySelectorAll('slot');
-        console.dir(slots);
+        console.dir("SLOTS: ",slots);
         slots[0].addEventListener('slotchange', event => {
-          console.dir(slots[0].assignedNodes());
+          console.log("[0] ", slots[0].assignedNodes());
         });
         slots[1].addEventListener('slotchange', event => {
-          console.dir(slots[1].assignedNodes());
+          console.log("[1]  ",slots[1].assignedNodes());
         });
       }
     }
@@ -74,7 +73,7 @@
     <div class="wrapper">
       <div class="explanation">
         <h1>css-05-slotchange-event</h1>
-        <h2>Getting the slot data from the slotchagne event.</h2>
+        <h2>Getting the slot data from the slotchange event.</h2>
         <p><em>Note that CR are considered a node.</em></p>
         <p>Named slot found in Array1>span>innertext etc</p>
       </div>
@@ -82,7 +81,7 @@
       <div id="output">
         <!-- OUTPUT OF CUSTOM ELEMENT -->
         <my-card>
-          <div>This is unnamed slot text</div>
+          <div>'DIV' This is unnamed slot text</div>
           <span slot="first">this is slot='first' => John</span>
         </my-card>
       </div>

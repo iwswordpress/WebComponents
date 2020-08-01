@@ -51,6 +51,7 @@
                     <slot name="title" "></slot><br>
                     <slot name="email" "></slot>
                 </div>
+                <slot>Default slot text</slot>
             `;
             
           }
@@ -70,12 +71,12 @@
             <div class="spacer"></div>
             <div id="output">
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
-                <my-card>
+                <my-card>Some default slot text here - if none default text in component won't be displayed as there elements in the slot
                      <!-- 
                         named slots. order of span elements not important as
                         the span is linked to component slot by the id
                      -->
-                    
+                
                     <span slot="email">john@example.com</span>
                     <span slot="first">John</span>
                     <span slot="title">Engineer</span>

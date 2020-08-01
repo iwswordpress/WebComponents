@@ -24,8 +24,13 @@
                 border-radius:10px;
             }
         </style>
+        
         <div class="card">
-           <slot>Default text in template will be rendered in the SLOT of the component.</slot>
+            <h2>Heading</h2>
+            <slot style="color:red;font-size:32px;">
+                <p >Default text in template will be rendered in the SLOT of the component.</p>
+            </slot>
+            <p>Some paragraph text here</p>
         </div>
         `;
 
@@ -54,7 +59,7 @@
             <div id="output">
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
                 <my-card>this is slot text</my-card> 
-                <!-- Default slot text will be rendered below as ther is no text.-->
+                <!-- Default slot text will be rendered below as there is no text.-->
                 <my-card></my-card> 
             </div>
             <div class="spacer"></div>
