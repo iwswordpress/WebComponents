@@ -7,10 +7,12 @@ h2 {
 }
 h3 {
 	font-weight: bold;
-	color: pink; /* EXERCISE will be pink as it is an h3 but h3 in component won't be pink */
+	color: pink;
+	/* EXERCISE will be pink as it is an h3 but h3 in component won't be pink */
 }
 my-card {
-	color: goldenrod; /* this will make text brown until overwritten by other styles */
+	color: goldenrod;
+	/* this will make text brown until overwritten by other styles */
 }
 
 /* ------------------- */
