@@ -75,8 +75,11 @@
                     <!-- This is slotted text -->
                     <!-- slotted text is Light DOM projected into the Shadow DOM -->
                     <span slot="first">John</span><br>
-                    <span slot="title">Engineer<br><span id="nested">Nested text NOT styled by ::slotted - only top
-                            level.</span></span></span><br>
+                    <span slot="title">Engineer<br>
+                        <span id="nested">Nested text NOT styled by ::slotted - only top
+                            level.
+                        </span>
+                    </span><br>
                     <span slot="email">john@example.com</span>
                     <!-- End slotted text -->
                 </my-card>
@@ -101,7 +104,7 @@
                     color:orange; font-weight: 
                     bold; font-size: 22px; 
                     letter-spacing:2px; }
-                    
+
                 ::slotted(#nested){ 
                     color:red; 
                     font-size:2.0rem; 
