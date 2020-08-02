@@ -37,21 +37,21 @@
                 // Attach a shadow root to <fancy-tabs>.
                 const shadowRoot = this.attachShadow({mode: 'open'});
                 shadowRoot.innerHTML = `
-                <style>
-                    div {
-                        border-radius: 10px;
-                        border: 5px solid orange;
-                        padding: 20px;
-                        color: var(--primary-color, goldenrod);
-                        text-transform: uppercase;
-                        font-size: var(--primary-size);
-                        width: 600px;
-                        margin-bottom:20px;
-                        font-family: inherit;
-                    }
-                </style>
-                <div >A styled DIV element</div>
-                <slot>DEFAULT SLOT TEXT</slot>
+                    <style>
+                        div {
+                            border-radius: 10px;
+                            border: 5px solid orange;
+                            padding: 20px;
+                            color: var(--primary-color, goldenrod);
+                            text-transform: uppercase;
+                            font-size: var(--primary-size);
+                            width: 600px;
+                            margin-bottom:20px;
+                            font-family: inherit;
+                        }
+                    </style>
+                    <div >A styled DIV element</div>
+                    <slot>DEFAULT SLOT TEXT</slot>
                 `;
             }
         });

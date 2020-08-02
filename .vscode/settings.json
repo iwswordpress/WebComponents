@@ -7,5 +7,8 @@
   "titleBar.inactiveForeground": "#e7e7e799"
 },
 "peacock.color": "#2196f3",
-"git.ignoreLimitWarning": true
+"git.ignoreLimitWarning": true,
+"editor.acceptSuggestionOnCommitCharacter": false,
+"editor.acceptSuggestionOnEnter": "off",
+"editor.quickSuggestions": false;
 }

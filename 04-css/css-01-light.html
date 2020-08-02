@@ -14,14 +14,16 @@
     <style>
         /* Custom CSS Variables */
         :root {
-            --primary-color: purple;
-            --primary-size: 25px;
+            /* --primary-color: red; */
+            --primary-size: 32px;
+            --font-style: 'capitalize'
         }
            
         my-component {
             color: var(--primary-color, goldenrod);
-            text-transform: uppercase;
-            font-size: var(--primary-size);
+            text-transform:  var(--font-style, uppercase);
+            font-size: var(--primary-size, 18px);
+           
         }
     </style>
     <script>  
