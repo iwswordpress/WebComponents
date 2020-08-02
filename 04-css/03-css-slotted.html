@@ -11,9 +11,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>03 Style Slotted</title>
 </head>
+
 <body>
-   
-    <script>  
+
+    <script>
         const template = document.createElement('template');
         template.innerHTML = `
         
@@ -25,6 +26,9 @@
                 border: 8px solid var(--primary-color, green);
                 border-radius: 40px;
                 letter-spacing:2px;
+                font-size:22px;
+                /*color: purple;*/
+                font-weight:bold;
             }
           
             h1 {
@@ -36,7 +40,7 @@
        
         <div class="card">
             <h1>This is template h1 styled by component</h1>  
-            <h3>Some h3 text</h3>     
+            <h3>Some h3 text which will not be styled by page level h3 rule</h3>     
             <slot name="first" id="first"></slot><br>
             <slot name="title" ></slot><br>
             <slot name="email" ></slot>
@@ -44,24 +48,27 @@
         `;
 
         class BusinessCard extends HTMLElement {
-        constructor() {
-            super();
-            this.attachShadow({ mode: 'open' });
-            this.shadowRoot.appendChild(template.content.cloneNode(true));
-          }
+            constructor() {
+                super();
+                this.attachShadow({
+                    mode: 'open'
+                });
+                this.shadowRoot.appendChild(template.content.cloneNode(true));
+            }
         }
 
         customElements.define('my-card', BusinessCard);
     </script>
-   
+
     <main>
         <div class="wrapper">
             <div class="explanation">
                 <h1>css-03-slotted</h1>
                 <h2>Slotted Styling</h2>
                 <p><em>REMEMBER! Light DOM will always override Shadow CSS.</em></p>
-                <p>We cant style the SLOT in the component as the element is in the LIGHT DOM. It gets projected into the SLOT in the component.</p>
-            </div> 
+                <p>We cant style the SLOT in the component as the element is in the LIGHT DOM. It gets projected into
+                    the SLOT in the component.</p>
+            </div>
             <div class="spacer"></div>
             <div id="output">
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
@@ -69,50 +76,31 @@
                     <!-- This is slotted text -->
                     <!-- slotted text is Light DOM projected into the Shadow DOM -->
                     <span slot="first">John</span><br>
-                    <span slot="title">Engineer<br><span id="nested">Nested text NOT styled by ::slotted - only top level.</span></span></span><br>
+                    <span slot="title">Engineer<br><span id="nested">Nested text NOT styled by ::slotted - only top
+                            level.</span></span></span><br>
                     <span slot="email">john@example.com</span>
                     <!-- End slotted text -->
-                  </my-card>
+                </my-card>
             </div>
             <div class="spacer"></div>
             <div class="exercise"">
                <h3>EXERCISE:</h3>
+               <p>Styles we will use later...</p>
+               <p>
                ::slotted(span){
                 color:white;
                 font-weight: bold;
                 font-size: 30px;
                 letter-spacing:2px;
             }
-            ::slotted([slot="first"]){
-                color:red;
-                font-weight: bold;
-                font-size: 40px;
-                letter-spacing:2px;
-            }
-            ::slotted([slot="title"]){
-                color:orange;
-                font-weight: bold;
-                font-size: 22px;
-                letter-spacing:2px;
-            }
-            ::slotted(#nested){
-                color:red;
-                font-size:2.0rem;
-                letter-spacing:2px;
-            }
-              
-            </div>
-        </div>
-    </main> 
-   
-    </body>
-
-
-    <footer>
-        <div class=" w3-container w3-blue w3-center footer">
-          <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
-        </div>
-      </footer>
+            ::slotted([slot=" first"]){ color:red; font-weight: bold; font-size: 40px; letter-spacing:2px; }
+                ::slotted([slot="title" ]){ color:orange; font-weight: bold; font-size: 22px; letter-spacing:2px; }
+                ::slotted(#nested){ color:red; font-size:2.0rem; letter-spacing:2px; } </div> </div> </main> </body>
+                </p> <footer>
+                <div class=" w3-container w3-blue w3-center footer">
+                    <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
+                </div>
+                </footer>
 
 </body>
 
