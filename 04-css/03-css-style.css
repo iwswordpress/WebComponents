@@ -6,20 +6,29 @@ h2 {
 	color: red;
 }
 h3 {
-	color: pink;
+	color: pink; /* EXERCISE will be pink as it is an h3 but h3 in component won't be pink */
 }
-/* my-card {
-	color: brown;
-} */
+my-card {
+	color: brown; /* this will make text brown until overwritten by other styles */
+} 
+
+/* ------------------- */
+/* this will work as element is in light dom */
 #nested {
-	/* this will work as element is in light dom */
+	
 	/* color: purple; */
 }
-/* span {
+
+/* ------------------- */
+/* span will overwrite css from inside component */
+/* span { 
 	color: red;
 	font-weight: bold;
 } */
-/* span will overwrite css from inside component */
+
+
+/* ------------------- */
+/* these will not work as the Shadow DOM is encapsulated */
 .card {
-	background: aqua; /* these will not work as the Shadow DOM is encapsulated */
+	background: aqua; 
 }
