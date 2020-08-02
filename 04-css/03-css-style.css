@@ -1,0 +1,25 @@
+:root {
+	--primary-color: red;
+	--primary-size: 18px;
+}
+h2 {
+	color: red;
+}
+h3 {
+	color: pink;
+}
+/* my-card {
+	color: brown;
+} */
+#nested {
+	/* this will work as element is in light dom */
+	/* color: purple; */
+}
+/* span {
+	color: red;
+	font-weight: bold;
+} */
+/* span will overwrite css from inside component */
+.card {
+	background: aqua; /* these will not work as the Shadow DOM is encapsulated */
+}

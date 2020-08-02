@@ -1,14 +1,14 @@
 {
- "workbench.colorCustomizations": {
-  "titleBar.activeBackground": "#2196f3",
-  "titleBar.activeForeground": "#e7e7e7",
-  "titleBar.border": "#2196f3",
-  "titleBar.inactiveBackground": "#2196f399",
-  "titleBar.inactiveForeground": "#e7e7e799"
-},
-"peacock.color": "#2196f3",
-"git.ignoreLimitWarning": true,
-"editor.acceptSuggestionOnCommitCharacter": false,
-"editor.acceptSuggestionOnEnter": "off",
-"editor.quickSuggestions": false;
+	"workbench.colorCustomizations": {
+		"titleBar.activeBackground": "#2196f3",
+		"titleBar.activeForeground": "#e7e7e7",
+		"titleBar.border": "#2196f3",
+		"titleBar.inactiveBackground": "#2196f399",
+		"titleBar.inactiveForeground": "#e7e7e799"
+	},
+	"peacock.color": "#2196f3",
+	"git.ignoreLimitWarning": true,
+	"editor.acceptSuggestionOnCommitCharacter": false,
+	"editor.acceptSuggestionOnEnter": "off",
+	"editor.quickSuggestions": false
 }

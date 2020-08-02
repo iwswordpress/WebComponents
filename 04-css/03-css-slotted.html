@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../_css/w3.css">
     <link rel="stylesheet" href="../_css/web-course.css">
-    <link rel="stylesheet" href="css-03-style.css">
+    <link rel="stylesheet" href="03-css-style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>03 Style Slotted</title>
 </head>
@@ -26,25 +26,17 @@
                 border-radius: 40px;
                 letter-spacing:2px;
             }
-            p {
-                font-size: var(--primary-size, 18px);
-                color: orangered;
-                letter-spacing:2px;
-            }
+          
             h1 {
                 color:green;
                 letter-spacing:2px;
             }
-            ::slotted(span){
-                color:white;
-                font-weight: bold;
-                font-size: 30px;
-                letter-spacing:2px;
-            }
+    
         </style> 
        
         <div class="card">
-            <h1>This is template h1 styled by component</h1>       
+            <h1>This is template h1 styled by component</h1>  
+            <h3>Some h3 text</h3>     
             <slot name="first" id="first"></slot><br>
             <slot name="title" ></slot><br>
             <slot name="email" ></slot>

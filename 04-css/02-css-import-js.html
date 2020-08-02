@@ -18,19 +18,14 @@
         /* Custom CSS Variables */
         :root {
             --primary-color: green;
-            --primary-size: 25px;
-            --background: #ccc;
-        }
-
-        my-component {
-            color: var(--primary-color, goldenrod);
-            text-transform: uppercase;
-            font-size: var(--primary-size);
+            --primary-size: 36px;
+            --background: pink;
         }
     </style>
     <div>Light dom div not affected by Shadow DOM CSS</div>
-    <script type="module">
-        import {CSS} from './css-02.js';
+    <!-- ES6 Module -->
+    <script type="module"> //We must use the type="module" nto be able to import 
+        import {CSS} from './02-css.js';
         customElements.define('my-component', class extends HTMLElement {
             constructor() {
                 super(); // always call super() first in the constructor.
@@ -41,7 +36,7 @@
                     ${CSS}
                 </style>
                 <div class="import">A styled DIV element</div>
-                <slot>DEFAULT SLOT TEXT</slot>
+                
                 `;
                // linking a stylesheet can work but is not considered good practice
             }
