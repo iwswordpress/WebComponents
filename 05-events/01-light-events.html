@@ -21,6 +21,11 @@
             width: 200px;
             border-radius: 10px;
             margin-top: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #9bb8cf;
         }
     </style>
 
@@ -39,10 +44,11 @@
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
                 <!-- We can add events to our Custom HTML tag just like regular HTML tags -->
                 <my-component onclick="alert('Event Click')"></my-component>
-                <button id="btnPublicVariable">Public Variable</button><br>
-                <button id="btnPublicMethod">Public Method</button>
+
             </div>
             <div class="spacer"></div>
+            <button id="btnPublicVariable">Public Variable</button>
+            <button id="btnPublicMethod">Public Method</button>
             <div class="exercise">
                 <h3>EXERCISE:
                     <p>Click the three events and observe output and DEV > CONSOLE</p>
@@ -70,6 +76,17 @@
     <script>
         const template = document.createElement('template');
         template.innerHTML = `
+                <style>
+                    h2 {
+                        border:2px solid orange;
+                        width:600px;
+                        padding:20px;
+                        cursor:pointer;
+                    }
+                    h2:hover {
+                        background: #ccc;
+                    }
+                </style>
                 <h2>CLICK ME: EVENTS IN WEB COMPONENTS</h2>
             `;
         class MyComponent extends HTMLElement {
