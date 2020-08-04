@@ -62,13 +62,16 @@
         var customComponent = document.querySelector('my-component');
         var btnValue = document.getElementById('btnPublicVariable');
         var btnMethod = document.getElementById('btnPublicMethod');
-        // we can add an event listener to the Custom HTML tag
+
         btnValue.addEventListener('click', function () {
-            // the Custom HTML tag has a property of pubVal which we can access and change
+            // Now that we have a reference to the web component called customComponent
+            // that we made at the top of this script block, we can access its methods and properties
             console.log('INITIAL Pub Val: ' + customComponent.pubVal);
             customComponent.pubVal = 'SOME NEW VALUE';
             console.log('NEW Pub Val: ' + customComponent.pubVal);
         });
+        // Now that we have a reference to the web component called customComponent
+        // that we made at the top of this script block, we can access its methods and properties
         btnMethod.addEventListener('click', function () {
             customComponent.publicMethod(Math.floor(Math.random() * 1000));
         });
