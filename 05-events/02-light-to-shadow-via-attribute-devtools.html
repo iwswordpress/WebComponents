@@ -84,11 +84,12 @@
         if (oldValue === newValue) {
           return;
         }
-        if (name === 'displaytext') {
+        if (name === 'displaytext' && oldValue !== null) {
           this._iconText = newValue;
+          console.log(`Name: ${name} changed from: ! ${oldValue} to: ! ${newValue}`)
         }
       }
-  
+
       _showIconText() {
         this._iconContainer = document.createElement('div');
         this._iconContainer.textContent = this._iconText;
@@ -115,9 +116,9 @@
           function.</h3>
         <p>This example in our 06-library section shows the use of atributeChangedCallback with blog posts: <a
             href="../06-library/01-ndc-show-post/index.html" target="_blank">A post example</a></p>
-            <p>This shows how the attributeChangedCallback feature can be used to pass properties to the component.</p>
+        <p>This shows how the attributeChangedCallback feature can be used to pass properties to the component.</p>
 
-       
+
       </div>
       <div class="spacer"></div>
       <div id="output">
@@ -127,20 +128,21 @@
       </div>
       <div class="spacer"></div>
       <div class="exercise">
-          <h3>EXERCISE:</h3>
-          <p>In DEV TOOLS > Elements change the value of 'displaytext' in div#output to see how the attribute change is reflected into component.</p>
-          <p>When you click on TOOLTIP you will se new text being shown.</p>
+        <h3>EXERCISE:</h3>
+        <p>In DEV TOOLS > Elements change the value of 'displaytext' in div#output to see how the attribute change is
+          reflected into component.</p>
+        <p>When you click on TOOLTIP you will se new text being shown.</p>
       </div>
     </div>
-</main> 
-  
- 
-<footer>
+  </main>
 
-  <div class=" w3-container w3-blue w3-center footer">
-        <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
-      </div>
-      </footer>
+
+  <footer>
+
+    <div class=" w3-container w3-blue w3-center footer">
+      <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
+    </div>
+  </footer>
 
 </body>
 

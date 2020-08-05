@@ -30,33 +30,40 @@
                 });
 
             }
-            connectedCallback() { // this as an event when the component is attached to the DOM
+            // connectedCallback() is an event when the component is attached to the DOM
+            connectedCallback() {
+                // Notice how we can access elements in the Light DOM from the Shadow DOM
+                // We must do this once the component has been added to the Light DOM and this
+                // is done in this connectedCallback lifecycle event.
                 const myItem = document.getElementById("comp");
 
                 //alert("Initial value is " + myItem.getAttribute("system"));
-                console.log("Initial value is " + myItem.getAttribute("system"));
+                console.log("connectedCallback START -------------");
+                console.log("Initial value is: " + myItem.getAttribute("system"));
+                console.log("connectedCallback END -------------");
             }
             static get observedAttributes() {
                 return ['system'];
             }
-            //these can be any names but first is attribute name, then original value, then new value
+            // these can be any names but first is attribute name, then original value, then new value
             // initially the attribute is null so initial setting fires a change
             // that is why we check oldVaue !== newValue although there are cases where this
             // may not be required.
             attributeChangedCallback(attributeName, oldValue, newValue) {
-                console.log('The attribute SYSTEM has been changed from ' + oldValue + ' to ' + newValue);
-                if (attributeName === 'system' && oldValue !== newValue) {
-                    this._temp = newValue;
-                    // we can carry out other actions etc.
-                    // this will fire twice as initial setting of value on page is considered a change.
-                    //alert('attribute changed...alert called in component');
-                }
+                console.log('The attribute SYSTEM has been changed from: ' + oldValue + ' to: ' + newValue);
+                // if (attributeName === 'system' && oldValue !== newValue) {
+                //     this._temp = newValue;
+                //     // we can carry out other actions etc.
+                //     // this will fire twice as initial setting of value on page is considered a change.
+                //     alert(`attribute changed to ${newValue}...alert called in component`);
+                // }
                 // this checks if oldValue was null to avoid firing with initial setting.
                 if (attributeName === 'system' && oldValue !== newValue && oldValue !== null) {
-                    this._temp = newValue;
+                    newValue;
                     // we can carry out other actions etc.
                     // this will fire twice as initial setting of value on page is considered a change.
-                    //alert('attribute changed...alert called in component...new value is: ' + newValue);
+                    alert(`attribute changed to ${newValue}...alert called in component`);
+                    console.log("attributeChangedCallback -------------");
                     console.log('attribute changed...new value is: ' + newValue);
                 }
             }
@@ -69,18 +76,19 @@
         <div class="wrapper">
             <div class="explanation">
                 <h1>03-light-to-shadow-attribute-js</h1>
-
             </div>
             <div class="spacer"></div>
             <div id="output">
                 <!-- OUTPUT OF CUSTOM ELEMENT -->
-                <p>Open DEV TOOLS > console to see how the attribute is changed programatically after 3 seconds.</p>
+                <p>Open DEV TOOLS > console to see how the attribute is changed programatically after 10
+                    seconds.</p>
+
                 <my-component system='WordPress' id="comp"></my-component>
             </div>
             <div class="spacer"></div>
             <div class="exercise"></div>
         </div>
-    </main> 
+    </main>
 
     <script>
         // select by id
@@ -88,10 +96,10 @@
         console.log(myItem.getAttribute("system"));
         setTimeout(function () {
             myItem.setAttribute("system", "JavaScript");
-            myItem.innerHTML += '<h1>System Attribute is now ' + myItem.getAttribute("system") +
+            document.querySelector('.exercise').innerHTML += '<h1>System Attribute is now ' + myItem.getAttribute("system") +
                 '</h1>';
             console.log(myItem.getAttribute("system"))
-        }, 3000);
+        }, 10000);
     </script>
 
     <footer>
