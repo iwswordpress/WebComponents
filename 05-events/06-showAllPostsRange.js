@@ -30,11 +30,11 @@ class ShowAllPostsRange extends HTMLElement {
     }
 
     connectedCallback() {
-        //this._getPosts();
+        this._getPosts();
     }
 
     static get observedAttributes() {
-        return ['range', 'test']; // if we add another attribute 'test' here the _getPosts() and AJAX will be fired if this attribute changes 
+        return ['range']; // if we add another attribute 'test' here the _getPosts() and AJAX will be fired if this attribute changes 
     }
     attributeChangedCallback(name, oldValue, newValue) {
         // this will fire initially as the element has no atrribute but is added when page runs
@@ -50,18 +50,16 @@ class ShowAllPostsRange extends HTMLElement {
             const objRange = JSON.parse(this.range);
             this.min = objRange.min;
             this.max = objRange.max
+            this._getPosts();
+        }
 
-        }
-        if (name === 'test') {
-            console.log("attribute TEST has changed")
-            console.log(name, oldValue, newValue);
-        }
-        this._getPosts();
+
     }
     disconnectedCallback() {
         console.log("disconnectedCallback() fired...");
     }
     _getPosts() {
+        //let apiUrl = 'https://jsonplaceholder.typicode.com/posts'
         let apiUrl = "06-data.json";
 
         fetch(apiUrl)

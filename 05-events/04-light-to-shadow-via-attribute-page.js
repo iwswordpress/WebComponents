@@ -29,14 +29,18 @@ class Child extends HTMLElement {
     // create a class level property to keep track of counter
     this._currentCount = 0;
     //console.log(comp);
+    // We can get the attribute value of our web component from within the component.
     let val = parseInt(comp.getAttribute('count'));
     console.log(val);
+    // regular button click event listener
     btn.addEventListener('click', (e) => {
       console.log("[CHILD] +++++ CLICK START +++++");
-      //console.log(e);
+      // console.log(e);
       // we create an event and also send with it the postArray
       // we increment the currentCount
       this._currentCount += 1;
+      // We csan change the attrribute value from within the component
+      // Remember the web component is now part of the DOM as a regular HMTL element.
       comp.setAttribute('count', this._currentCount);
       console.log("_currentCount = " + comp.getAttribute('count'));
       this.dispatchEvent(new CustomEvent('childClick', {
@@ -55,10 +59,10 @@ class Child extends HTMLElement {
     if (oldValue === newValue) {
       return;
     }
-    if (name === 'count') {
+    if (name === 'count' && oldValue !== null) {
       const btn = this.shadowRoot.getElementById('btn');
       btn.innerHTML = 'CHILD COMPONENT => ' + newValue;
-      console.log('[attributeChangedCallback] CHILD COMPONENT - ' + newValue);
+      console.log('[attributeChangedCallback] CHILD COMPONENT - ' + newValue + ' old value was: ' + oldValue);
       //alert('[attributeChangedCallback] CHILD COMPONENT - ' + newValue);
     }
   }
