@@ -24,7 +24,9 @@ class ProfileCard extends HTMLElement {
                }
             </style>
             <div class="card">              
-               <div class="content"><strong>${this.postid} ${this.posttitle}</strong></div>
+               <div class="content">
+               <strong>${this.postid} ${this.posttitle}</strong>
+               </div>
                <div>Authored by <em>${this.author}</em><br></div>
                <div>${this.content}</div>
              
