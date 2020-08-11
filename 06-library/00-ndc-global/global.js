@@ -7,7 +7,7 @@ export class Utility {
     static getUrl() {
         return 'https://49plus.co.uk/';
     }
-}
+} // var url = Utility.getUrl() gives the return value. Does not need a Class instance
 export class UI {
     // ======= HELPER FUNCTIONS ======= 
     static formatSuccess(el) {

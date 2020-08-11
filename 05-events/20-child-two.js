@@ -44,11 +44,11 @@ class ChildTwo extends HTMLElement {
 
     });
   };
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(attributeName, oldValue, newValue) {
     if (oldValue === newValue) {
       return;
     }
-    if (name === 'displaytext') {
+    if (attributeName === 'displaytext') {
       const btn = this.shadowRoot.getElementById('btn');
       btn.innerHTML = 'CHANGED BY COMPONENT ONE TO: ' + newValue;
       //alert(btn.innerHTML);
@@ -59,7 +59,8 @@ class ChildTwo extends HTMLElement {
     return ['displaytext'];
   }
   publicMethod() {
-    alert('\npublicMethod in COMPONENT TWO fired...\n\nwe can then do many things...');
+    //alert('\npublicMethod in COMPONENT TWO fired...\n\nwe can then do many things...');
+    console.log("Component TWO publicMethod fired...")
   }
 }
 

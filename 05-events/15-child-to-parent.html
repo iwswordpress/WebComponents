@@ -35,31 +35,33 @@
 <body>
 
   <!-- EVENT BUBBLING up nested elements - component is nested in div#container -->
-  <div class="container">
+  <div class="container" id="container">
     <h3>Parent Container (orange)</h3>
     <p id="pOutput">...output here when Child Component One Custom Event is fired...</p>
-    <!-- WEB COMPONENT -->
-    <child-one></child-one>
-    <script src="./15-child-to-parent.js"></script>
-    <!-- WEB COMPONENT -->
-    <br>
-    <div>
 
-      <p>
-        When the CHILD ONE button is clicked it sends a CUSTOM EVENT that bubbles up out of the component. We can listen
-        for this event (childOneClick) with an addEventListener.
-      </p>
-      <p>
-        Data is also passed with the event in the [detail]
-        property of the CUSTOM EVENT. A RND number has been added for demo purposes.
-      </p>
-      <p>We see this in the BLOG1 where the POST titles are buttons that cause the post to be displayed in the main
-        area.</p>
-    </div>
+
+
     <br>
+    <div></div>
+    <div id="divOutput" style="margin:20px;color:green;font-weight:bold;font-size:26px;"></div>
+    <p>
+      When the CHILD ONE button is clicked it sends a CUSTOM EVENT that bubbles up out of the component. We can listen
+      for this event (childOneClick) with an addEventListener.
+    </p>
+    <p>
+      Data is also passed with the event in the [detail]
+      property of the CUSTOM EVENT. A RND number has been added for demo purposes.
+    </p>
+    <p>We see this in the BLOG1 where the POST titles are buttons that cause the post to be displayed in the main
+      area.</p>
+  </div>
+  <br>
 
   </div>
-
+  <!-- WEB COMPONENT -->
+  <child-one></child-one>
+  <script src="./15-child-to-parent.js"></script>
+  <!-- WEB COMPONENT -->
   <!-- 
     
   As we have bubbles set to true, events bubble up the DOM tree.
@@ -71,21 +73,25 @@
   <script>
     const childOne = document.querySelector('child-one')
     childOne.addEventListener('childOneClick', e => {
-      console.log("<child-one> HTML PAGE: Event heard on page in childOne");
+      console.log("PAGE: <child-one> HTML PAGE: Event heard on page in childOne");
       console.log(e);
       const pOutput = document.getElementById('pOutput');
       pOutput.innerHTML = '<b>' + e.detail + '</b>';
+      const divOutput = document.getElementById('divOutput');
+      divOutput.innerHTML = '<b>' + e.detail + '</b>';
     });
   </script>
   <!-- Listen for Custom Event in container div tag -->
   <!-- <script>
-    const container =  document.getElementById('container');
+    const container = document.getElementById('container');
     container.addEventListener('childOneClick', e => {
-        console.log("<child-one> Event HEARD on page in container");
-        console.log(e); 
-        const pOutput = document.getElementById('pOutput');
-        pOutput.innerHTML = '<b>' + e.detail + '</b>';
-        });
+      console.log("PAGE <child-one> event HEARD on page in container");
+      console.log(e);
+      const pOutput = document.getElementById('pOutput');
+      pOutput.innerHTML = '<b>' + e.detail + '</b>';
+      const divOutput = document.getElementById('divOutput');
+      divOutput.innerHTML = '<b>' + e.detail + '</b>';
+    });
   </script> -->
 
   <footer>

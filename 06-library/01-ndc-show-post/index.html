@@ -29,14 +29,13 @@
                 <show-post postid="88"></show-post>
                 <!-- WEB COMPONENT -->
                 <script>
-
                     const btn = document.getElementById('btnChange');
                     btn.addEventListener('click', function () {
                         // <show-post /> is an HTML tag
                         document.querySelector('show-post').setAttribute('postid', 83)
-                        document.querySelector('show-post').publicMethod('We can access the component via its methods');
+                        document.querySelector('show-post').publicMethod(
+                            'We can access the component via its methods');
                     })
-
                 </script>
 
                 </section>
@@ -44,7 +43,7 @@
             <div class="spacer"></div>
             <div class="exercise"">
                <h3>EXERCISE:
-                 <p>Change postid to 110 or 106 in DEV > ELEMENTS as well as clicking button.</p>
+                 <p>Change postid to 92, 103 or 112 in DEV > ELEMENTS as well as clicking button.</p>
                </h3>
             </div>
         </div>

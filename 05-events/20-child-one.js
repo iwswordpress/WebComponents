@@ -24,6 +24,7 @@ class ChildOne extends HTMLElement {
     // this.postListElement = this.shadowRoot.querySelector('section');
   }
   connectedCallback() {
+    // We access elements in the shadow root using 'this.shadowRoot.<selector>'
     const btn = this.shadowRoot.getElementById('btn');
     btn.addEventListener('click', (e) => {
       console.log("[CHILD ONE] +++++ CLICK START +++++");
@@ -34,6 +35,9 @@ class ChildOne extends HTMLElement {
         bubbles: true,
         composed: true
       }));
+      // const componentTwo = document.querySelector('child-two');
+      // componentTwo.publicMethod();
+
       console.log("[CHILD ONE] +++++ CLICK END +++++ ");
     });
   };
