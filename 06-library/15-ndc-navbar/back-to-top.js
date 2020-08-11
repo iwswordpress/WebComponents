@@ -1,3 +1,5 @@
+// Based on https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+
 customElements.define('back-to-top', class extends HTMLElement {
     constructor() {
         super(); // always call super() first in the constructor.
