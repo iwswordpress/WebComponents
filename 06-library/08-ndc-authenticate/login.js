@@ -1,6 +1,4 @@
 import {
-    SERVER,
-    Utility,
     UI,
     BTN
 } from '../00-ndc-global/global.js';

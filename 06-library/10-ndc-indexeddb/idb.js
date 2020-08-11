@@ -1,4 +1,5 @@
 export class IDB {
+   // IDB.db() gives an instance that enables interaction with IndexedDB
    static db(DB_NAME, DB_VERSION, TABLE) {
       return new Promise(function (resolve, reject) {
          // Make sure IndexedDB is supported before attempting to use it

@@ -1,8 +1,8 @@
 class LazyLoadComponent extends HTMLElement {
     constructor() {
         super();
-        this.imgURL;
-        this.ID;
+        this.imgURL; // set up some initial class level state - could be default values
+        this.ID; // set up some initial class level state - could be default values
         this.attachShadow({
             mode: 'open'
         });
@@ -42,19 +42,13 @@ class LazyLoadComponent extends HTMLElement {
         }
     }
     connectedCallback() {
-        let options = {
-            // root: null,
-            // threshold: 1.0,
-            // rootMargin: '0px'
-            root: null,
-            // 400px above the fold for demo purpses
-            rootMargin: "0px 0px -400px 0px",
-            threshold: 0.0 // what percentage of object must be in view to activate it.
-        }
+
         const lazyComponent = this.shadowRoot.querySelector('#component');
-        let callback = (entries, observer) => {
+
+        let callback = (entries, observer) => { // Intersection Observer API
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting) { // Intersection Observer API
+                    // START Usual fetch and display
                     console.log("loading...");
                     let apiUrl = 'https://wpjs.co.uk/wpb/wp-json/wp/v2/posts/' + this.ID;
                     console.log("Making AJAX to: " + apiUrl);
@@ -62,7 +56,6 @@ class LazyLoadComponent extends HTMLElement {
                         .then(res => res.json())
                         .then(data => {
                             console.log(data);
-                            let i;
                             let output = '<br>';
                             const info = this.shadowRoot.querySelector('#info');
                             info.innerHTML = '';
@@ -74,12 +67,22 @@ class LazyLoadComponent extends HTMLElement {
                             output += '</div>';
                             info.innerHTML += output;
                         });
-                    observer.unobserve(entry.target);
+                    // END Usual fetch and display
+                    observer.unobserve(entry.target); // Intersection Observer API
                 }
             });
         }
+        let options = {
+            // root: null,
+            // threshold: 1.0,
+            // rootMargin: '0px'
+            root: null,
+            rootMargin: "0px 0px -400px 0px", // 400px above the fold for demo purpses
+            threshold: 0.0 // what percentage of object must be in view to activate it.
+        }
+        // Create instance of Intersection Observer with options
         let observer = new IntersectionObserver(callback, options);
-        observer.observe(lazyComponent);
+        observer.observe(lazyComponent); // Initiate observer
     }
     disconnectedCallback() {}
 }

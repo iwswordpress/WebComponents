@@ -49,7 +49,7 @@ template.innerHTML = `
 
         .input-success {    
             background-color: #ffffff;
-            background-image: url("https://49plus.co.uk/abob/wp-content/themes/gp-child/images/icon-tick.png");
+            background-image: url("https://49plus.co.uk/udemy-webcomponents/_images/icon-tick.jpg");
             background-size: 35px 35px;
             background-position:right center;
             background-repeat: no-repeat;
@@ -60,7 +60,7 @@ template.innerHTML = `
         }
         .input-error {    
             background-color: #ffffff;
-            background-image: url("https://49plus.co.uk/abob/wp-content/themes/gp-child/images/cross.svg");
+            background-image: url("https://49plus.co.uk/udemy-webcomponents/_images/cross.png");
             background-size: 35px 35px;
             background-position:right center;
             background-repeat: no-repeat;

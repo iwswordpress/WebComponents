@@ -79,15 +79,14 @@ class WPIndexedDBReadLocal extends HTMLElement {
                for (var i = 0; i < post.length; i++) {
                   //console.log(post[i].id + " " + post[i].title + " " + post[i].authorName); 
                   card += `
-
                      <p>
-                       
                         <profile-card
                         postid= "${post[i].id}" 
                         posttitle="${post[i].title}" 
                         author="${post[i].authorName}" 
                         content="${post[i].content}" 
-                        ></profile-card>
+                        >
+                        </profile-card>
                      </p>
                    `;
                }

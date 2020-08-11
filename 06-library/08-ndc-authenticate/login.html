@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../_css/library.css">
   <style>
     :root {
-     
+
       --main-font: 'Quicksand';
       --main-font-size: 22px;
       --mobile-font-size: 16px;
@@ -17,7 +17,7 @@
 
     body {
       background: #fff;
-      font-family: var( --main-font, sans-serif);
+      font-family: var(--main-font, sans-serif);
     }
 
     main {
@@ -58,8 +58,6 @@
       if (e.detail.length != 0) {
         formMessage.innerHTML = `
           <p><strong>LOGIN FORM posted successfully...now remove form component</strong></p>
-          <p>Posted data:</p>
-          <p>${e.detail}</p>
         `;
       } else {
         formMessage.innerHTML = `
