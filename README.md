@@ -1,4 +1,5 @@
 # Web Components as micro-apps/services
+## All the JS Frameworks playing nicely together...
 
 You are free to use code in projects but not trainings or books without prior permission.
 
