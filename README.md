@@ -17,3 +17,19 @@ In 06 is 00-ndc-global that has global.js for common functions for form validati
 
 ### NDC-WEB-COMPONENTS.docx is a set of additional guidance notes on the lessons.
 
+## Useful links
+
+https://www.webcomponents.org/introduction
+
+https://custom-elements-everywhere.com/
+
+https://developer.mozilla.org/en-US/docs/Web/Web_Components
+
+https://developers.google.com/web/fundamentals/web-components
+
+## BUILD (not frameworks) tools
+
+https://stenciljs.com/docs/overview
+https://dev.to/hybrids/from-classes-to-plain-objects-and-pure-functions-2gip
+https://lit-html.polymer-project.org/
+https://open-wc.org/
