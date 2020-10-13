@@ -5,6 +5,8 @@ You are free to use code in projects but not trainings or books without prior pe
 
 ### YouTube video on demo site: https://www.youtube.com/watch?v=FpTPcIlWjA4
 
+### YouTube course: https://www.youtube.com/watch?v=QC-JTqQTv2k&list=PLsszRSbzjyvkQwzrJobroRl7z7MfSlePa
+
 ### Live site: https://49plus.co.uk/udemy-webcomponents/
 ## Contents
 
