@@ -7,9 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../_css/w3.css">
     <link rel="stylesheet" href="../_css/web-course.css">
-    <link rel="stylesheet" href="03-css-style.css">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>03 Style Slotted</title>
+    <style>
+        h3 {
+            color: orange;
+            font-size: 34px
+        }
+    </style>
 </head>
 
 <body>
@@ -23,24 +29,33 @@
                 background: #ccc;
                 max-width:900px;;
                 padding:20px;
-                border: 4px solid var(--primary-color, green);
+                border: 4px solid black;
                 border-radius: 20px;
                 letter-spacing:1px;
-                font-size:22px;
-                /*color: purple;*/
+                font-size:16px;
                 font-weight:bold;
             }
-          
             h1 {
-                color:green;
+                color: red;
             }
-    
+            slot[name=email]  {
+                color: green;
+            }
+           
+            
+            ::slotted(.first) {
+                color: orange;
+                font-size:28px;
+
+            }
+           
+           
         </style> 
        
         <div class="card">
             <h1>This is template h1 styled by component</h1>  
             <h3>Some h3 text which will not be styled by page level h3 rule</h3>     
-            <slot name="first" id="first"></slot><br>
+            <slot name="first" id="first" ></slot><br>
             <slot name="title" ></slot><br>
             <slot name="email" ></slot>
         </div>
@@ -74,7 +89,7 @@
                 <my-card>
                     <!-- This is slotted text -->
                     <!-- slotted text is Light DOM projected into the Shadow DOM -->
-                    <span slot="first">John</span><br>
+                    <span slot="first" class="first">John</span><br>
                     <span slot="title">Engineer<br>
                         <span id="nested">Nested text NOT styled by ::slotted - only top
                             level.
@@ -86,35 +101,16 @@
             </div>
             <div class="spacer"></div>
             <div class="exercise"">
-               <h3>EXERCISE:</h3>
+               <h3>EXERCISE: (this is an h3 tag so styled by page CSS)</h3>
                <p>Styles we will use later...</p>
-               <p>
-                ::slotted(span){
-                    color:white;
-                    font-weight: bold;
-                    font-size: 30px;
-                    letter-spacing:2px;
-                    }
-                ::slotted([slot=" first"]){ 
-                    color:red; font-weight: 
-                    bold; font-size: 40px; 
-                    letter-spacing:2px; }
-
-                ::slotted([slot="title" ]){ 
-                    color:orange; font-weight: 
-                    bold; font-size: 22px; 
-                    letter-spacing:2px; }
-
-                ::slotted(#nested){ 
-                    color:red; 
-                    font-size:2.0rem; 
-                    letter-spacing:2px; } 
-                </div> </div> </main> </body>
-                </p> <footer>
+            </div>
+            <footer>
                 <div class=" w3-container w3-blue w3-center footer">
-                    <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
-                </div>
-                </footer>
+                <p>WEB COMPONENTS WORKSHOP - &copy; Craig West 2020</p>
+            </div>
+            </footer>
+
+
 
 </body>
 
