@@ -33,8 +33,8 @@ class Child extends HTMLElement {
     let val = parseInt(comp.getAttribute('count'));
     console.log(val);
     // regular button click event listener
-    btn.addEventListener('click', (e) => {
-      console.log("[CHILD] +++++ CLICK START +++++");
+    btn.addEventListener('click', e => {
+      // console.log("[CHILD] +++++ CLICK START +++++");
       // console.log(e);
       // we create an event and also send with it the postArray
       // we increment the currentCount
@@ -42,15 +42,20 @@ class Child extends HTMLElement {
       // We csan change the attrribute value from within the component
       // Remember the web component is now part of the DOM as a regular HMTL element.
       comp.setAttribute('count', this._currentCount);
-      console.log("_currentCount = " + comp.getAttribute('count'));
-      this.dispatchEvent(new CustomEvent('childClick', {
-        detail: 'Button clicked ' + this._currentCount + ' times.<br>Child can trigger an event and send data to parent.',
-        bubbles: true, // allows it to bubble up to top of child component where it can be heard in Light DOM
-        composed: true // allows it to penetrate Shadow DOM and be heard in in tags outside of component
-      }));
-      console.log("[CHILD] +++++ CLICK END +++++ ");
+      console.log('_currentCount = ' + comp.getAttribute('count'));
+      this.dispatchEvent(
+        new CustomEvent('childClick', {
+          detail:
+            'Button clicked ' +
+            this._currentCount +
+            ' times.<br>Child can trigger an event and send data to parent.',
+          bubbles: true, // allows it to bubble up to top of child component where it can be heard in Light DOM
+          composed: true // allows it to penetrate Shadow DOM and be heard in in tags outside of component
+        })
+      );
+      //console.log("[CHILD] +++++ CLICK END +++++ ");
     });
-  };
+  }
   static get observedAttributes() {
     return ['count'];
   }
@@ -62,7 +67,12 @@ class Child extends HTMLElement {
     if (name === 'count' && oldValue !== null) {
       const btn = this.shadowRoot.getElementById('btn');
       btn.innerHTML = 'CHILD COMPONENT => ' + newValue;
-      console.log('[attributeChangedCallback] CHILD COMPONENT - ' + newValue + ' old value was: ' + oldValue);
+      console.log(
+        '[attributeChangedCallback] CHILD COMPONENT - ' +
+          newValue +
+          ' old value was: ' +
+          oldValue
+      );
       //alert('[attributeChangedCallback] CHILD COMPONENT - ' + newValue);
     }
   }

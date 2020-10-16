@@ -17,7 +17,7 @@ class ProfileCard extends HTMLElement {
                     background: #ccc;
                     box-sizing: border-box;
                     max-width: 750px;
-                    font-size:22px; 
+                    font-size:32px; 
                 }
                div {
                    margin:10px 0;
@@ -34,7 +34,8 @@ class ProfileCard extends HTMLElement {
                     Authored by <em>${this.author}</em><br>
                 </div>
                 <div>
-                    <span style="color:#2196f3">${this.content.toUpperCase()}</span> - Loren Ipsum 
+                    <h3 style="color:#2196f3">${this.content}</h3>
+                    <p>Lorem Ipsum </p>
                 </div>
             </div>  
         `;
@@ -43,7 +44,9 @@ class ProfileCard extends HTMLElement {
     return ['postid', 'posttitle', 'author', 'content'];
   }
   attributeChangedCallback(attributeName, oldValue, newValue) {
-    console.log(attributeName, oldValue, newValue);
+    console.log(
+      `attributeName: ${attributeName}, oldValue: ${oldValue}, newvalue: ${newValue}`
+    );
     if (attributeName === 'posttitle') {
       this.posttitle = newValue;
     }
