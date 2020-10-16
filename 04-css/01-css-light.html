@@ -25,6 +25,9 @@
             font-size: var(--primary-size, 18px);
            
         }
+        h1 {
+            color: red;
+        }
     </style>
     <script>  
         
@@ -36,7 +39,9 @@
                 console.log('Component created…');
             }
             connectedCallback() { // this as an event when the component is attached to the DOM
-                this.innerHTML = '<h1>This is my web component with no Shadow DOM</h1>'; // this refers to the class component.
+                this.innerHTML = `
+                    <style>h1 {color:a</style>
+                    <h1>This is my web component with no Shadow DOM</h1>`; // this refers to the class component.
                 console.log('Component now part of DOM…');
             }
         }

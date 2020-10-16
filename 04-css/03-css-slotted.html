@@ -41,14 +41,18 @@
             slot[name=email]  {
                 color: green;
             }
-           
-            
+            slot[name=title]  {
+                color: purple;
+            }
             ::slotted(.first) {
                 color: orange;
                 font-size:28px;
 
             }
-           
+           ::slotted(#nested) {
+                color: grene;
+                font-size:34px;
+           }
            
         </style> 
        
@@ -91,7 +95,7 @@
                     <!-- slotted text is Light DOM projected into the Shadow DOM -->
                     <span slot="first" class="first">John</span><br>
                     <span slot="title">Engineer<br>
-                        <span id="nested">Nested text NOT styled by ::slotted - only top
+                        <span id="nested">Nested text NOT styled by ::slotted(#nested) - only top
                             level.
                         </span>
                     </span><br>
