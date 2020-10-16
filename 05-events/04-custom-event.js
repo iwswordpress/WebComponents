@@ -50,7 +50,7 @@ class Child extends HTMLElement {
             this._currentCount +
             ' times.<br>Child can trigger an event and send data to parent.',
           bubbles: true, // allows it to bubble up to top of child component where it can be heard in Light DOM
-          composed: true // allows it to penetrate Shadow DOM and be heard in in tags outside of component
+          composed: false // allows it to penetrate Shadow DOM and be heard in in tags outside of component
         })
       );
       //console.log("[CHILD] +++++ CLICK END +++++ ");

@@ -42,7 +42,17 @@
 
 
     <br>
-    <div></div>
+    <div> <!-- WEB COMPONENT -->
+      <child-one></child-one>
+      <script src="./15-child-to-parent.js"></script>
+      <!-- WEB COMPONENT -->
+      <!-- 
+        
+      As we have bubbles set to true, events bubble up the DOM tree.
+      We can thus listen for the Custom Event either on the web component or its parent and higher.
+      In this case we can listen for the Custom Event on the div with class parent. 
+    
+    --></div>
     <div id="divOutput" style="margin:20px;color:green;font-weight:bold;font-size:26px;"></div>
     <p>
       When the CHILD ONE button is clicked it sends a CUSTOM EVENT that bubbles up out of the component. We can listen
@@ -58,17 +68,7 @@
   <br>
 
   </div>
-  <!-- WEB COMPONENT -->
-  <child-one></child-one>
-  <script src="./15-child-to-parent.js"></script>
-  <!-- WEB COMPONENT -->
-  <!-- 
-    
-  As we have bubbles set to true, events bubble up the DOM tree.
-  We can thus listen for the Custom Event either on the web component or its parent and higher.
-  In this case we can listen for the Custom Event on the div with class parent. 
-
--->
+ 
   <!-- Listen for Custom Event in Custom HTML tag -->
   <script>
     const childOne = document.querySelector('child-one')
