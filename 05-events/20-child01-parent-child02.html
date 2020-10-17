@@ -104,6 +104,7 @@
       let rndNumber = Math.floor(Math.random() * 1000);
       childTwo.setAttribute("displaytext", rndNumber);
       // direct childOne communicating with child-two by firing a public method in child-two
+      // this is sibling to sibling communciation and not a general design pattern but possible
       const componentTwo = document.querySelector('child-two');
       componentTwo.publicMethod();
 
