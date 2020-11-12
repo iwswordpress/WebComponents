@@ -1,6 +1,6 @@
 // We can important site wide variables
 // either through an IMPORT or a CLASS
-import { SERVER, Utility } from '../00-ndc-global/global.js';
+import { SERVER } from '../00-ndc-global/global.js';
 
 console.log('[SERVER from import] ' + SERVER);
 
@@ -32,14 +32,14 @@ class ShowPost extends HTMLElement {
   static get observedAttributes() {
     return ['postid'];
   }
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(attributeName, oldValue, newValue) {
     // this will fire initially as the element has no atrribute but is added when page runs
     console.log('attribute has changed');
     if (oldValue === newValue) {
       return;
     }
-    if (name === 'postid') {
-      console.log(name, oldValue, newValue);
+    if (attributeName === 'postid') {
+      console.log(attributeName, oldValue, newValue);
       this.ID = newValue;
       this._getPosts(this.ID);
     }
@@ -85,9 +85,16 @@ class ShowPost extends HTMLElement {
   // we can also use getters and setters to do this (be wary of infinite loop)
   publicMethod(val) {
     // alert('[FN] Public Method in Web Component called...' + val);
-    console.log('Public Method in Web Component called...[VALUE] ' + val + ' passed in');
+    console.log(
+      'Public Method in Web Component called...[VALUE] ' + val + ' passed in'
+    );
+
+    // We can call methods in Web Component
     // this._getPosts(40);
+
+    // We can also change attributes
     // this.setAttribute('postid', 1142); // triggers attributeCallback lifecycle event
   }
 }
+// We define custom component tag
 customElements.define('show-post', ShowPost);

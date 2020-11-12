@@ -46,6 +46,8 @@
                     btn.addEventListener('click', function () {
                         // <show-post /> is an HTML tag
                         document.querySelector('show-post').setAttribute('postid', 109)
+                        // this is 'like' creating and instance of the Web Component class and
+                        // accessing a method/property
                         document.querySelector('show-post').publicMethod(
                             'We can access the component via its methods');
                     })
