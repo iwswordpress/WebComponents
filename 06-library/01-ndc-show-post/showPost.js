@@ -85,9 +85,7 @@ class ShowPost extends HTMLElement {
   // we can also use getters and setters to do this (be wary of infinite loop)
   publicMethod(val) {
     // alert('[FN] Public Method in Web Component called...' + val);
-    console.log(
-      'Public Method in Web Component called...[VALUE] ' + val + ' passed in'
-    );
+    console.log('Public Method in Web Component called...[VALUE] ' + val);
 
     // We can call methods in Web Component
     // this._getPosts(40);
