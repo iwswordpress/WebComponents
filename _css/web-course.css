@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 /* @import is an an anti-pattern - just used for the course samples but not in the main app */
 body {
-	font-family: 'Quicksand', sans-serif;
-	color: black;
-	font-size: 18px;
+  font-family: 'Quicksand', sans-serif;
+  color: black;
+  font-size: 18px;
 }
 
 a,
@@ -11,81 +11,81 @@ a:hover,
 a:focus,
 a:active,
 a:visited {
-	text-decoration: none;
-	font-weight: bold;
-	color: orange;
+  text-decoration: none;
+  font-weight: bold;
+  color: orange;
 }
 
 a:hover {
-	color: orange;
-	text-decoration: underline;
+  color: orange;
+  text-decoration: underline;
 }
 
 p {
-	font-size: 22px;
-	/* font-weight: bold; */
-	margin-bottom: 10px;
+  font-size: 22px;
+  /* font-weight: bold; */
+  margin-bottom: 10px;
 }
 
 button {
-	margin: 5px;
-	width: 250px;
-	font-size: 18px;
+  margin: 5px;
+  width: 250px;
+  font-size: 18px;
 }
 
 li {
-	list-style: none;
-	margin-left: 30px;
-	color: #2196f3;
-	font-size: 22px;
-	font-weight: bold;
+  list-style: none;
+  margin-left: 30px;
+  color: #2196f3;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .header {
-	padding: 5px;
-	text-align: center;
+  padding: 5px;
+  text-align: center;
 }
 
 .footer {
-	padding: 10px;
+  padding: 10px;
 }
 
 .flex {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .wrapper {
-	margin: 20px;
+  margin: 20px;
 }
 
 #output {
-	border: 4px dashed orange;
-	padding: 10px;
-	margin: 10px;
+  border: 4px dashed orange;
+  padding: 10px;
+  margin: 10px;
 }
 
 .explanation {
-	border: 2px solid #2196f3;
-	padding: 10px;
-	margin: 10px;
+  border: 2px solid #2196f3;
+  padding: 10px;
+  margin: 10px;
 }
 
 .explanation h1 {
-	color: #2196f3;
+  color: #2196f3;
 }
 
 .exercise {
-	border: 2px solid orange;
-	padding: 10px;
-	margin: 10px;
+  border: 2px solid orange;
+  padding: 10px;
+  margin: 10px;
 }
 
 .spacer {
-	height: 20px;
+  height: 20px;
 }
 
 footer {
-	margin-top: 30px;
+  margin-top: 30px;
 }
