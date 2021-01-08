@@ -52,6 +52,7 @@
           <!-- We can add events to our Custom HTML tag just like regular HTML tags -->
           <my-component onclick="alert('Event Click')"></my-component>
         </div>
+
         <div class="spacer"></div>
         <button id="btnPublicVariable">Public Variable</button>
         <button id="btnPublicMethod">Public Method</button>
@@ -67,6 +68,9 @@
     <script>
       // we can now get a reference to the Custom HTML tag
       var customComponent = document.querySelector('my-component');
+      btnMethod.addEventListener('click', function () {
+        customComponent.publicMethod(Math.floor(Math.random() * 1000));
+      });
 
       var btnValue = document.getElementById('btnPublicVariable');
       var btnMethod = document.getElementById('btnPublicMethod');
